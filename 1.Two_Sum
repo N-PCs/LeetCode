@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> indices(2);                         //creating a vector with 2 elements
+        unordered_map<int,int> visitedElements;          //creating a hashmap 
+        for(int index=0;index<nums.size();index++){       //Loop through array
+            int currElement=nums[index];                  //current element initialisation
+            int numToFind=target-currElement;              //number to find
+            
+            if(visitedElements.count(numToFind)){        //checks if numToFind is in Hashmap or not
+                indices[0]=visitedElements[numToFind];
+                indices[1]=index;
+                return indices;                          //Returns result
+            }
+            visitedElements[currElement]=index;      // Stores current element and its index in the hashmap
+        }
+        return indices;                      // Return the indices vector
+    }
+};
