@@ -1,0 +1,19 @@
+#include <algorithm>
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> merged(nums1);
+        merged.insert(merged.end(),nums2.begin(),nums2.end());
+        sort(merged.begin(),merged.end());
+        int m=merged.size();
+        double result=0.0;
+        if(m%2!=0){
+            result= merged[m/2];
+        }
+        else{
+            result= (merged[m/2]+merged[(m/2)-1])/2.0;
+        }
+        return result;
+    }
+
+};
