@@ -1,0 +1,33 @@
+class Solution {
+public:
+    int minMaxDifference(int num) {
+        int maxDig = -1;
+        int minDig = -1;
+        int minNum = 0;
+        int maxNum = 0;
+        findMin_Max(num, maxDig, minDig, minNum, maxNum);
+        return maxNum - minNum;
+    }
+
+    void findMin_Max(int num, int& maxDig, int& minDig, int& minNum, int& maxNum) {
+        int currDigit = num % 10;
+        if (currDigit != 9) {
+            maxDig = currDigit;
+        }
+
+        if (num < 10) {
+            minDig = num;
+            minNum = 0;
+            maxNum = 9;
+            return;
+        }
+
+        findMin_Max(num / 10, maxDig, minDig, minNum, maxNum);
+
+        maxNum = (maxNum * 10) + ((currDigit == maxDig) ? 9 : currDigit);
+        minNum = (minNum * 10) + ((currDigit == minDig) ? 0 : currDigit);
+        
+    }
+
+
+};
