@@ -1,0 +1,17 @@
+#include <algorithm>
+class Solution {
+public:
+    vector<int> transformArray(vector<int>& nums) {
+        vector<int> parity;
+        for(int i:nums){
+            if(i%2==0){
+                parity.push_back(0);
+            }
+            else{
+                parity.push_back(1);
+            }
+        }
+        sort(parity.begin(),parity.end());
+        return parity;
+    }
+};
