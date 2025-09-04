@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int findClosest(int x, int y, int z) {
+        int distance_xz = abs(x - z), distance_yz = abs(y - z);
+        if (distance_xz < distance_yz) {
+            return 1;
+        } else if (distance_xz > distance_yz) {
+            return 2;
+        } else {
+            return 0;
+        }
+    }
+};
