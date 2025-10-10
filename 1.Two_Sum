@@ -12,6 +12,7 @@ public:
                 indices[1]=index;
                 return indices;                          //Returns result
             }
+
             visitedElements[currElement]=index;      // Stores current element and its index in the hashmap
         }
         return indices;                      // Return the indices vector
