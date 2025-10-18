@@ -2,7 +2,6 @@ class Solution {
 public:
     string defangIPaddr(string address) {
         string defang;
-
         for(char i:address){
             if(i=='.'){
                 defang+="[.]";
@@ -11,7 +10,6 @@ public:
                 defang+=i;
             }
         }
-
         return defang;
     }
 };
