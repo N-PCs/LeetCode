@@ -3,6 +3,7 @@ public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> indices(2);                         //creating a vector with 2 elements
         unordered_map<int,int> visitedElements;          //creating a hashmap 
+
         for(int index=0;index<nums.size();index++){       //Loop through array
             int currElement=nums[index];                  //current element initialisation
             int numToFind=target-currElement;              //number to find
